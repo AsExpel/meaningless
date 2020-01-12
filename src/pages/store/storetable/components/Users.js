@@ -28,6 +28,7 @@ function Users({ dispatch, list: dataSource, loading, total, page: current }) {
   }
 
   function createHandler(values) {
+    // console.log(values);
     dispatch({
       type: 'storeandstoretable/create',
       payload: values,
@@ -40,6 +41,11 @@ function Users({ dispatch, list: dataSource, loading, total, page: current }) {
       dataIndex: 'name',
       key: 'name',
       render: text => <a href="">{text}</a>,
+    },
+    {
+      title: 'Password',
+      dataIndex: 'password',
+      key: 'password',
     },
     {
       title: 'Email',
@@ -95,12 +101,12 @@ function Users({ dispatch, list: dataSource, loading, total, page: current }) {
 }
 
 function mapStateToProps(state) {
-  const { list, total, page } = state['storeandstoretable'];
+  const { list, total, page } = state.storeandstoretable;
   return {
     list,
     total,
     page,
-    loading: state.loading.models['storeandstoretable'],
+    loading: state.loading.models.storeandstoretable,
   };
 }
 

@@ -37,7 +37,7 @@ class UserEditModal extends Component {
   render() {
     const { children } = this.props;
     const { getFieldDecorator } = this.props.form;
-    const { name, email, website } = this.props.record;
+    const { name, email, website,password } = this.props.record;
     const formItemLayout = {
       labelCol: { span: 6 },
       wrapperCol: { span: 14 },
@@ -83,6 +83,16 @@ class UserEditModal extends Component {
                 getFieldDecorator('website', {
                   initialValue: website,
                 })(<Input />)
+              }
+            </FormItem>
+            <FormItem
+              {...formItemLayout}
+              label="Password"
+            >
+              {
+                getFieldDecorator('password', {
+                  initialValue: password,
+                })(<Input type={password} />)
               }
             </FormItem>
           </Form>

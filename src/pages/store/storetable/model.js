@@ -35,6 +35,7 @@ export default {
       yield put({ type: 'fetch', payload: { page } });
     },
     *create({ payload: values }, { call, put, select }) {
+      console.log(values);
       yield call(usersService.create, values);
       const page = yield select(state => state['storeandstoretable'].page);
       yield put({ type: 'fetch', payload: { page } });
