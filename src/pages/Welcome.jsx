@@ -25,6 +25,17 @@ export default () => (
           marginBottom: 24,
         }}
       />
+      <div>
+        <Alert type="success" message="success" banner closable/>
+        <Alert message="Warning text" banner />
+        <Alert
+          message="Very long warning text warning text text text text text text text"
+          banner
+          closable
+        />
+        <Alert showIcon={false} message="Warning text without icon" banner />
+        <Alert type="error" message="Error text" banner />
+      </div>
       <Typography.Text strong>
         <a target="_blank" rel="noopener noreferrer" href="https://pro.ant.design/docs/block">
           <FormattedMessage
