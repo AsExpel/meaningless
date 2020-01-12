@@ -21,6 +21,10 @@ class AvatarDropdown extends React.Component {
 
       return;
     }
+    if(key ==='center'){
+      router.push('/user/accountcenter');
+      return;
+    }
 
     router.push(`/account/${key}`);
   };
@@ -35,12 +39,12 @@ class AvatarDropdown extends React.Component {
     } = this.props;
     const menuHeaderDropdown = (
       <Menu className={styles.menu} selectedKeys={[]} onClick={this.onMenuClick}>
-        {menu && (
+
           <Menu.Item key="center">
             <Icon type="user" />
             <FormattedMessage id="menu.account.center" defaultMessage="account center" />
           </Menu.Item>
-        )}
+
         {menu && (
           <Menu.Item key="settings">
             <Icon type="setting" />

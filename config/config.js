@@ -82,6 +82,12 @@ export default {
           path: '/user/login',
           component: './user/login',
         },
+        {
+          name: '个人中心',
+          icon: 'smile',
+          path: '/user/accountcenter',
+          component: './user/accountcenter',
+        },
       ],
     },
     {
@@ -111,6 +117,12 @@ export default {
               authority: ['admin'],
             },
             {
+              name: 'UserDashboard',
+              icon: 'smile',
+              path: '/store/storetable',
+              component: './store/storetable',
+            },
+            {
               component: './404',
             },
           ],
@@ -119,6 +131,11 @@ export default {
           component: './404',
         },
       ],
+    },
+    {
+      path: '/store',
+      component: '../layouts/BasicLayout',
+      routes: [],
     },
     {
       component: './404',

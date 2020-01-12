@@ -52,6 +52,7 @@ const GlobalHeaderRight = props => {
           rel="noopener noreferrer"
           className={styles.action}
         >
+          使用文档
           <Icon type="question-circle-o" />
         </a>
       </Tooltip>
