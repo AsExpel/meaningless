@@ -4,6 +4,9 @@ import { routerRedux } from 'dva/router';
 import styles from './Users.css';
 import { PAGE_SIZE } from '../utils/constants';
 import UserModal from './UserModal';
+import {user_seach}  from '../../../../components/DatabaseSeach';
+import {get} from "enzyme/src/configuration";
+// import {request} from "express";
 
 function Users({ dispatch, list: dataSource, loading, total, page: current }) {
   function deleteHandler(id) {
@@ -34,6 +37,21 @@ function Users({ dispatch, list: dataSource, loading, total, page: current }) {
       payload: values,
     });
   }
+
+  // function user_seach(url ,data , callback){
+  //   let baseUrl = "http://localhost/index.php/admin/";
+  //    url = baseUrl + "index/get_id_to_name";
+  //   reqwest({
+  //     url: url
+  //     , type:"jsonp"
+  //     , method: 'POST'
+  //     , data: { "id":35 }
+  //     , success: function (resp) {
+  //       console.log(resp);
+  //     }
+  //   })
+  // }
+
 
   const columns = [
     {
@@ -80,6 +98,18 @@ function Users({ dispatch, list: dataSource, loading, total, page: current }) {
           <UserModal record={{}} onOk={createHandler}>
             <Button type="primary">Create User</Button>
           </UserModal>
+        </div>
+        <div className={styles.create}>
+          <Button onClick={()=>{user_seach(
+            'admin/index/get_id_to_name',
+            {"id":25 },
+            function (resp) {
+               // alert(resp);
+              console.log(resp);
+            }
+            )}} type="button">
+            test
+          </Button>
         </div>
         <Table
           loading={loading}

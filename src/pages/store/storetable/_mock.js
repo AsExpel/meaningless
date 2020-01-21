@@ -64,6 +64,7 @@ function uid(len) {
 
 function getData(page) {
   const start = (page - 1) * PAGE_SIZE;
+  console.log('get data:',page);
   return {
     status: 'success',
     total: data.length,
@@ -81,6 +82,7 @@ export default {
     res.end('ok');
   },
   'PATCH /api/storeandstoretable/:id': (req, res) => {
+    console.log('_mock date PATCH ',req);
     data.forEach(item => {
       if (`${item.id}` === `${req.params.id}`) {
         Object.assign(item, req.body);
@@ -89,6 +91,7 @@ export default {
     res.end('ok');
   },
   'POST /api/storeandstoretable': (req, res) => {
+    console.log('_mock date POST ',req);
     data.push({
       ...req.body,
       id: uid(),

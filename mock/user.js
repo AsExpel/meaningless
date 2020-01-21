@@ -75,6 +75,10 @@ export default {
       address: 'Sidney No. 1 Lake Park',
     },
   ],
+  'GET /api/testdb' : {
+
+    dbtarget: 'http://localhost/index.php/admin/index/get_id_to_name' ,
+  },
   'POST /api/login/account': (req, res) => {
     const { password, userName, type } = req.body;
 
